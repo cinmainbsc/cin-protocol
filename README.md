@@ -1,8 +1,8 @@
 # CIN — On-chain Fee Split Protocol
 
-CIN is a fixed-supply BEP-20 token deployed on BNB Smart Chain. Every transaction fee is
+CIN is a BEP-20 token deployed on BNB Smart Chain with a hard cap of 21,000,000,000 CIN and a current supply of 350,000,000 CIN. Every transaction fee is
 split inside the contract on each trade; the receiver split is readable on-chain and
-verifiable on BscScan. No mint function, no team allocation, no unlock schedule.
+verifiable on BscScan. Minting is restricted to the emission contract at 0xed6e...375e; the operator account holds neither MINTER_ROLE nor DEFAULT_ADMIN_ROLE, so it cannot mint or revoke. No team allocation, no unlock schedule.
 
 ## Deployed contracts (BNB Smart Chain mainnet)
 
@@ -13,7 +13,7 @@ verifiable on BscScan. No mint function, no team allocation, no unlock schedule.
 | BuybackBurner | `0x701c908a4a914cb8762774d2cc93ef7b8d375fa1` |
 | CIN/USDT Pair (PancakeSwap V2) | `0x9b733b0f0a8828cdf5d52c3de49ddad3db108d03` |
 
-- Total supply: 350,000,000 CIN (fixed)
+- Current supply: 350,000,000 CIN (hard cap 21,000,000,000)
 - Buy / sell fee: 600 bps (6%)
 - Compiler: Solidity 0.8.20, optimizer 200 runs, MIT — verified as Exact Match on BscScan
 
@@ -58,7 +58,7 @@ investment advice, and it makes no promise of return.
 BNB Smart Chain 上的固定供应 BEP-20 代币。每笔交易的手续费由合约在链上直接拆分，
 去向可逐笔在 BscScan 核对。无增发函数、无团队预留、无解锁计划。
 
-- 总供应 350,000,000 枚，固定
+- 当前供应 350,000,000 枚（硬顶 21,000,000,000 枚）
 - 买卖税 6%，四向拆分：10% 回购销毁储备 / 50% LP 奖励池 / 20% 推荐池 / 20% 社区金库
 - LP 矿机零增发：质押 CIN/USDT LP，0 / 30 / 90 天三档，权重 0.60 / 1.00 / 1.50 倍
 - 提前退出仅对未领收益罚没 30%，本金全额返还，罚没全部回到流动性池
