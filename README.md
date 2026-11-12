@@ -57,14 +57,17 @@ eth_call getReserves()            0x0902f1ac   (Pair)
 eth_call hasRole(bytes32,address) 0x91d14854   (CINToken)
 ```
 
-## 目录
+## 仓库结构
 
 ```
-contracts/   已验证源码（与链上字节码一致，勿改）
-docs/        地址簿、部署与核验说明、对外表述边界
-abi/         从 BscScan 的 Contract 页导出的 ABI
-TRUST.md     可核验清单：现在就查得到的、还没查清的
+contracts/CIN_Protocol_Remix.sol   # 主合约扁平化源码（与链上字节码一致，勿改）
+contracts/MiningVault.sol          # LP 质押金库
+contracts/BuybackBurnerV2.sol      # 现行回购引擎（v2 修正版）
+addresses.md                       # 合约 / 钱包 / 角色哈希地址簿
+TRUST.md                           # 可核验清单与未查清项
 ```
+
+ABI 不内置，直接从 BscScan 对应合约页的 Contract 标签导出，避免与实际字节码不同步。
 
 ## 免责声明
 
