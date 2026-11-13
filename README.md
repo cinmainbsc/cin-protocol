@@ -46,7 +46,7 @@ CIN 是部署在 BNB Smart Chain 上的 BEP-20 代币，配套一套可链上核
 | `0x9b73…8d03` | CIN/USDT Pair | 2.92% |
 | `0xb14c…01af` | 运营钱包 | 0.028% |
 
-前两个地址合计 97.03%，均非多签、无锁仓。这是当前最大的结构性风险。
+前两个地址合计 97.03%，均非多签、无锁仓。用途拆分、月度划转上限与逐笔公开规则见 [`docs/持仓与归属.md`](docs/持仓与归属.md)，划转台账见 [`docs/划转记录.md`](docs/划转记录.md)。
 
 ## 核验方法
 
@@ -67,6 +67,8 @@ contracts/MiningVault.sol          # LP 质押金库
 contracts/BuybackBurnerV2.sol      # 现行回购引擎（v2 修正版）
 addresses.md                       # 合约 / 钱包 / 角色哈希地址簿
 TRUST.md                           # 可核验清单与未查清项
+docs/持仓与归属.md                  # 2.87 亿与金库的用途、划转规则 (v1.0)
+docs/划转记录.md                    # 逐笔划转台账
 ```
 
 ABI 不内置，直接从 BscScan 对应合约页的 Contract 标签导出，避免与实际字节码不同步。
